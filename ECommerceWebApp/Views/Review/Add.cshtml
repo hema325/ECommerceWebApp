@@ -1,0 +1,16 @@
+﻿@model AddReviewViewModel
+
+@{
+    var returnUrl = Context.Request.Path + Context.Request.QueryString.Value;
+}
+
+<form asp-controller="Review" asp-action="add" asp-route-returnUrl="@returnUrl">
+    <input asp-for="ItemId" hidden/>
+    <div class="my-3">
+        <label asp-for="Comment" class="form-label"></label>
+        <textarea asp-for="Comment" placeholder="review" id="review" class="form-control" style="height:100px;"></textarea>
+        <span asp-validation-for="Comment" class="text-danger"></span>
+    </div>
+    <input type="submit" class="btn btn-primary float-end mt-2" value="Add" />
+</form>
+

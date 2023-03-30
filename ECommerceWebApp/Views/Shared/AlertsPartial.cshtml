@@ -1,0 +1,40 @@
+﻿
+
+@if (TempData["Info"] != null)
+{
+    <div class="alert alert-info alert-dismissible">
+        @TempData["Info"]
+        <btn class="btn-close" data-bs-dismiss="alert"></btn>
+    </div>
+}
+
+
+@if(TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible">
+        @TempData["Success"]
+        <btn class="btn-close" data-bs-dismiss="alert"></btn>
+    </div>
+}
+
+
+@if (TempData["Warning"] != null)
+{
+    <div class="alert alert-warning alert-dismissible">
+       @TempData["Warning"]
+       <btn class="btn-close" data-bs-dismiss="alert"></btn>
+    </div>
+}
+
+
+@if (TempData["Danger"] != null)
+{
+    <div class="alert alert-danger alert-dismissible">
+        @TempData["Danger"]
+        <btn class="btn-close" data-bs-dismiss="alert"></btn>
+    </div>
+}
+
+
+
+

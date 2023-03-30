@@ -1,0 +1,27 @@
+﻿@model EditCountryViewModel
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="card card-body">
+    <div class="card-title mt-4" >
+        <h2>Update Country</h2>
+    </div>
+    
+    <form asp-action="Edit">
+        <input asp-for="Id" hidden />
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="float-end mt-3">
+            <input type="submit" class="btn btn-primary rounded mb-4" value="Edit"/>
+        </div>
+    </form>
+</div>
+
+@section Scripts
+{
+    <partial name="/Views/Shared/_ValidationScriptsPartial.cshtml" />
+}

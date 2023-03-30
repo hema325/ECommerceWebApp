@@ -1,0 +1,34 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Conversations] (Table)
+       [dbo].[Messages] (Table)
+       [dbo].[messages].[idx_messagesIsRead] (Index)
+       [dbo].[messages].[idx_messagesSenderId] (Index)
+       [dbo].[messages].[idx_messagesConversationId] (Index)
+       [dbo].[Roles] (Table)
+       [dbo].[Tokens] (Table)
+       [dbo].[UserConversations] (Table)
+       [dbo].[userConversations].[Idx_userConversationsJoinDateTime] (Index)
+       [dbo].[userConversations].[Idx_userConversationsLeftDateTime] (Index)
+       [dbo].[UserRoles] (Table)
+       [dbo].[Users] (Table)
+       Foreign Key: unnamed constraint on [dbo].[Conversations] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Messages] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Messages] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Tokens] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserConversations] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserConversations] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserRoles] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserRoles] (Foreign Key)
+
+** Supporting actions

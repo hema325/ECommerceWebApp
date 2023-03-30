@@ -1,0 +1,101 @@
+﻿@using DataAccess.Data
+@using ECommerceWebApp.Models.Shop
+@model ShopIndexViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="mt-5 mb-0 shadow-sm">
+    <div class="input-group">
+        <input type="text" name="filter" class="form-control form-control-lg" placeholder="search" id="searchInput"/>
+        <button type="button" class="btn btn-outline-primary"><i class="bi bi-search fs-5" id="searchBtn"></i></button>
+    </div>
+</div>
+
+<div class="row my-5 py-3 text-capitalize">
+    <div class="col-lg-3 col-4 border-end">
+        <h3 class="mb-4 text-secondary">Categories</h3>
+
+        @if(@Model.Categories!=null)
+        {
+            @foreach(var l1 in Model.Categories)
+            {
+                @if(l1.Children != null)
+                {   
+                    <a class="text-decoration-none text-secondary text-capitalize fs-5 d-block" data-bs-toggle="collapse" data-bs-target="#sub@(l1.Id)">@l1.Name <i class="bi bi-arrow-down-short float-end fs-6"></i></a>
+                    <div class="collapse ps-4" id="sub@(l1.Id)">
+                        @foreach(var l2 in l1.Children)
+                        {
+                            @if(l2.Children != null)
+                            {
+                                <a class="text-decoration-none text-secondary text-capitalize fs-5 d-block" data-bs-toggle="collapse" data-bs-target="#sub@(l2.Id)">@l2.Name <i class="bi bi-arrow-down-short float-end fs-6"></i></a>
+                                <div class="collapse ps-4" id="sub@(l2.Id)">
+                                @foreach(var l3 in l2.Children)
+                                {
+                                    @if(l3.Children != null)
+                                    {
+                                        <a class="text-decoration-none text-secondary text-capitalize fs-5 d-block" data-bs-toggle="collapse" data-bs-target="#sub@(l3.Id)">@l3.Name <i class="bi bi-arrow-down-short float-end fs-6"></i></a>
+                                        <div class="collapse ps-4" id="sub@(l3.Id)">
+                                        @foreach(var l4 in l3.Children)
+                                        {
+                                            <a asp-controller="shop" asp-action="Index" asp-route-categoryId="@l4.Id" class="text-decoration-none text-capitalize d-block fs-5">@l4.Name <i class="bi bi-arrow-right-short float-end fs-6"></i></a>
+                                        }
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <a asp-controller="shop" asp-action="Index" asp-route-categoryId="@l3.Id" class="text-decoration-none text-capitalize d-block fs-5">@l3.Name <i class="bi bi-arrow-right-short float-end fs-6"></i></a>
+                                        }
+                                }
+                                </div>
+                            }
+                            else
+                            {
+                                 <a asp-controller="shop" asp-action="Index" asp-route-categoryId="@l2.Id" class="text-decoration-none text-capitalize d-block fs-5">@l2.Name <i class="bi bi-arrow-right-short float-end fs-6"></i></a>
+                            }   
+                        }
+                    </div>
+                }
+                else
+                {
+                    <a asp-controller="shop" asp-action="Index" asp-route-categoryId="@l1.Id" class="btn btn-secondary fs-5" id="@l1.Id">@l1.Name <i class="bi bi-arrow-right-short float-end fs-6"></i></a>
+                }
+            }
+        }
+
+
+        <h3 class="my-4 text-secondary">Filter</h3>
+        <input id="categoryId" value="@Model.CategoryId" hidden />
+        <div class="mb-3">
+            <label class="form-label">Sort By</label>
+            <select class="form-control" id="sortBy">
+                <option selected value="-1">Select</option>
+                <option value="0">Price Ascending</option>
+                <option value="1">Price Descending</option>
+                <option value="2">Viewes Ascending</option>
+                <option value="3">Viewes Descending</option>
+            </select>
+        </div>
+        <div class="my-3">
+            <label class="form-label">Price</label>
+            <div class="input-group">
+                <input class="form-control" id="minPrice" placeholder="min"/>
+                <input class="form-control" id="maxPrice" placeholder="max"/>
+            </div>
+        </div>
+        <div Class="mt-3">
+            <input type="submit" class="btn btn-outline-primary float-end" id="apply" value="Apply" />
+        </div>
+    </div>
+    <div class="col">
+        <h3 class="mb-4 text-secondary">Products</h3>
+        <div class="d-flex row  g-5 row-cols-xl-3 row-cols-lg-2 row-cols-md-2 row-cols-1 d-none" id="searchContainer"></div>
+        <div class="d-flex row  g-5 row-cols-xl-3 row-cols-lg-2 row-cols-md-2 row-cols-1" id="cardsContainer"></div>
+        <div class="my-5 text-center"><a class="link d-none me-3" id="showMore">Show More</a> <a class="link d-none" id="cancel">Cancel</a> </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script src="/js/Controllers/Shop/Index.js"></script>
+}

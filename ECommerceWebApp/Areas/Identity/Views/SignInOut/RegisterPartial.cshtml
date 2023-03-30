@@ -1,0 +1,52 @@
+﻿@model RegisterViewModel
+
+
+<div class="modal fade" id="signOutModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Register</h5>
+            </div>
+            <div class="modal-body">
+                <form asp-area="identity" asp-controller="SignInOut" asp-action="Register" class="row">
+                    <div asp-validation-summary="ModelOnly" class="text-danger col"></div>
+                         <div class="mb-2">
+                             <label asp-for="FirstName" class="form-label"></label>
+                             <input asp-for="FirstName" class="form-control" />
+                             <span asp-validation-for="FirstName" class="text-danger"></span>
+                         </div>
+                          <div class="my-2">
+                             <label asp-for="LastName" class="form-label"></label>
+                             <input asp-for="LastName" class="form-control" />
+                             <span asp-validation-for="LastName" class="text-danger"></span>
+                         </div>
+                        <div class="my-2">
+                            <label asp-for="PhoneNumber" class="form-label"></label>
+                            <input asp-for="PhoneNumber" class="form-control" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                         <div class="my-2">
+                             <label asp-for="Email" class="form-label"></label>
+                             <input asp-for="Email" class="form-control" />
+                             <span asp-validation-for="Email" class="text-danger"></span>
+                         </div>
+                           <div class="my-2">
+                            <label asp-for="Password" class="form-label"></label>
+                            <input asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        
+                         <div class="my-2">
+                            <label asp-for="ConfirmPassword" class="form-label"></label>
+                            <input asp-for="ConfirmPassword" class="form-control" />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+                    <div class="mt-2 d-flex justify-content-end">
+                        <input type="submit" class="btn btn-primary" value="Register"/>
+                    </div>
+               </form>
+            </div>
+        </div>
+    </div>
+</div>
+

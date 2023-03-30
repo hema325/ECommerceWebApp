@@ -1,0 +1,12 @@
+D:\Asp.netCoreMVC\ECommerceWebApp\DataAccess\bin\Release\net6.0\DataAccess.deps.json
+D:\Asp.netCoreMVC\ECommerceWebApp\DataAccess\bin\Release\net6.0\DataAccess.dll
+D:\Asp.netCoreMVC\ECommerceWebApp\DataAccess\bin\Release\net6.0\DataAccess.pdb
+D:\Asp.netCoreMVC\ECommerceWebApp\DataAccess\obj\Release\net6.0\DataAccess.csproj.AssemblyReference.cache
+D:\Asp.netCoreMVC\ECommerceWebApp\DataAccess\obj\Release\net6.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\Asp.netCoreMVC\ECommerceWebApp\DataAccess\obj\Release\net6.0\DataAccess.AssemblyInfoInputs.cache
+D:\Asp.netCoreMVC\ECommerceWebApp\DataAccess\obj\Release\net6.0\DataAccess.AssemblyInfo.cs
+D:\Asp.netCoreMVC\ECommerceWebApp\DataAccess\obj\Release\net6.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\Asp.netCoreMVC\ECommerceWebApp\DataAccess\obj\Release\net6.0\DataAccess.dll
+D:\Asp.netCoreMVC\ECommerceWebApp\DataAccess\obj\Release\net6.0\refint\DataAccess.dll
+D:\Asp.netCoreMVC\ECommerceWebApp\DataAccess\obj\Release\net6.0\DataAccess.pdb
+D:\Asp.netCoreMVC\ECommerceWebApp\DataAccess\obj\Release\net6.0\ref\DataAccess.dll

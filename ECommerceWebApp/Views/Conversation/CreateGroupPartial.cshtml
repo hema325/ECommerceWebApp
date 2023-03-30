@@ -1,0 +1,24 @@
+﻿@model CreateGroupViewModel
+
+<div class="modal fade" id="createGroupModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form  asp-action="CreateGroup">
+                    <div class="mb-2">
+                        <label asp-for="GroupName" class="form-label"></label>
+                        <input asp-for="GroupName" class="form-control" placeholder="name"/>
+                    </div>
+                    <div class="my-3">
+                        <label class="form-label">Choose Users</label>
+                        <select asp-for="UsersIDs" class="form-control" multiple></select>
+                    </div>
+                    <div class="mt-3 d-flex justify-content-end">
+                        <input type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal" value="Cancel"/>
+                        <input type="submit" class="btn btn-primary" value="Create"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

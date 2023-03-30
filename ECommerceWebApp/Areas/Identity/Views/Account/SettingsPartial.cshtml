@@ -1,0 +1,38 @@
+﻿
+
+<div class="modal fade" id="settingsModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Settings</h5>
+            </div>
+            <div class="modal-body">
+                <div class="list-group list-group-flush">
+                    <button class="list-group-item list-group-item-action px-0 " data-bs-toggle="modal" data-bs-target="#ChangeImageModal">
+                        <div class="d-flex justify-content-between text-muted my-2">
+                        Change Image
+                        <i class="bi bi-image fs-5"></i>
+                        </div>
+                    </button>
+                    <button class="list-group-item list-group-item-action px-0" id="changeDetails" data-bs-toggle="modal" data-bs-target="#changeDetailsModal">
+                        <div class="d-flex justify-content-between text-muted my-2">
+                        Change Details
+                        <i class="bi bi-person-vcard-fill fs-5"></i>
+                        </div>
+                    </button>
+                    <button class="list-group-item list-group-item-action px-0" data-bs-toggle="modal" data-bs-target="#ChangePasswordModal">
+                        <div class="d-flex justify-content-between text-muted my-2">
+                        Change Password
+                       <i class="bi bi-key-fill fs-5"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<partial name="/Areas/Identity/Views/Account/ChangePasswordPartial.cshtml" model="null">
+<partial name="/Areas/Identity/Views/Account/ChangeImagePartial.cshtml" model="null">
+<partial name="/Areas/Identity/Views/Account/ChangeDetailsPartial.cshtml" model ="null" />

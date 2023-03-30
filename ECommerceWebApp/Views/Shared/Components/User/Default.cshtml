@@ -1,0 +1,53 @@
+﻿@model ECommerceWebApp.Models.ViewComponents.UserComponentViewModel
+
+
+    <a data-bs-toggle="dropdown" class="d-flex justify-content-center">
+        <div class="position-relative p-2" style="width:60px;height:60px;">
+             <img src="~/@Model.ImgUrl" class="rounded-circle d-block" width="50" height="45"/>
+             <span class="position-absolute end-0 bottom-0 border border-3 border-light rounded-circle test badge @(Model.ConvsHasUnReadMsgsCount>0?"bg-danger":"bg-secondary")" id="bill"><i class="bi bi-bell-fill "></i></span>
+        </div>
+    </a>
+ 
+    <ul class="dropdown-menu dropdown-menu-end" style="min-width:250px">
+        <li><a asp-area="Identity" asp-controller="Account" asp-action="Index" class="dropdown-item">
+            <div class="d-flex justify-content-between text-muted">
+                Account
+                <i class="bi bi-person-circle fs-5"></i>
+            </div>
+        </a></li>
+        <li><a asp-area="" asp-controller="Conversation" asp-action="Conversations" class="dropdown-item">
+            <div class="d-flex justify-content-between align-items-center gap-4  @(Model.ConvsHasUnReadMsgsCount>0? "text-danger":"text-muted")" id="convsLink">
+                Chats
+                    <span class="rounded-pill badge bg-danger @(Model.ConvsHasUnReadMsgsCount>0?"d-inline":"d-none")" id="convHasUnReadMsgsCount">@Model.ConvsHasUnReadMsgsCount</span>
+                    <i class="bi bi-chat-text fs-5"></i>
+            </div>
+        </a></li>
+        <li><a asp-area="" asp-controller="user" asp-action="showUsers" class="dropdown-item">
+            <div class="d-flex justify-content-between text-muted">
+                Users 
+                <i class="bi bi-people fs-5"></i>
+            </div>
+        </a></li>
+        <li>
+            <hr class="dropdown-divider pe-5" />
+        </li>
+        <li>
+            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#settingsModal">
+                <div class="d-flex justify-content-between text-muted">
+                    Settings
+                    <i class="bi bi-gear"></i>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a asp-area="Identity" asp-controller="SignInOut" asp-action="SignOut" class="dropdown-item">
+                <div class="d-flex justify-content-between text-muted">
+                    Sign Out
+                    <i class="bi bi-box-arrow-right"></i>
+                </div>
+            </a>
+        </li>
+    </ul>
+
+<partial name="/Areas/Identity/Views/Account/SettingsPartial.cshtml" model="null" />
+

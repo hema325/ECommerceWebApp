@@ -1,0 +1,79 @@
+﻿@model AccountIndexViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="text-secondary my-5">Account</h2>
+
+<div class="card shadow overflow-hidden my-5" style="height:300px">
+    <div class="row h-100">
+        <div class="col-lg-3 col-12 h-100">
+            <img src="/@Model.ImgUrl" id="profileImg" class="d-block w-100 h-100" />
+        </div>
+        <div class="col-lg col-12">
+            <div class="card-body d-flex flex-column justify-content-center h-100">
+                <div class="row">
+                    <label asp-for="Name" class="col col-md-4 col-form-label"></label>
+                    <input asp-for="Name" class="col form-control-plaintext" disabled/>
+                </div>
+                <div class="row">
+                    <label asp-for="Email" class="col col-md-4 col-form-label"></label>
+                    <input asp-for="Email" class="col form-control-plaintext" disabled/>
+                </div>
+                <div class="row">
+                    <label asp-for="PhoneNumber" class="col col-md-4 col-form-label"></label>
+                    <input asp-for="PhoneNumber" class="col form-control-plaintext" disabled/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 class="text-secondary my-5">Addresses</h2>
+
+
+@if(Model.Addresses!=null)
+{
+    <ul class="list-group list-group-flush list-group-numbered  my-5 w-100">
+        @foreach(var address in Model.Addresses)
+        {
+             <li class="list-group-item d-flex border-0 shadow my-4 py-4" id="con@(address.Id)">
+                 <div class="ms-2 flex-fill">
+                     <div class="row">
+                         <label asp-for="@address.Country.Name" class="col col-md-4 col-form-label pt-0">Country</label>
+                         <input asp-for="@address.Country.Name" class="col form-control-plaintext pt-0" disabled/>
+                     </div>
+                     <div class="row">
+                         <label asp-for="@address.City" class="col col-md-4 col-form-label"></label>
+                         <input asp-for="@address.City" class="col form-control-plaintext" disabled/>
+                     </div>
+                     <div class="row">
+                         <label asp-for="@address.State" class="col col-md-4 col-form-label"></label>
+                         <input asp-for="@address.State" class="col form-control-plaintext" disabled/>
+                     </div>
+                     <div class="row">
+                         <label asp-for="@address.StreetAddress" class="col col-md-4 col-form-label"></label>
+                         <input asp-for="@address.StreetAddress" class="col form-control-plaintext" disabled/>
+                     </div>
+                     <div class="row">
+                         <label asp-for="@address.PostalCode" class="col col-md-4 col-form-label"></label>
+                         <input asp-for="@address.PostalCode" class="col form-control-plaintext" disabled/>
+                     </div>
+                 </div>
+                 <a role="button" id="@address.Id" class="text-danger float-end delAddressBtn"><i class="bi bi-trash fs-5"></i></a>
+             </li>
+        }
+    </ul>
+}
+
+
+<div class="text-center my-5">
+    <a asp-area="Identity" asp-controller="Account" asp-action="AddAddress" class="">Add New Address</a>
+</div>
+
+
+
+@section Scripts
+{
+    <script src="/js/Areas/Identity/Account/Index.js"></script>
+}

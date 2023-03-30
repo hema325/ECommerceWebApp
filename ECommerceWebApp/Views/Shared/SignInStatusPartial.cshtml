@@ -1,0 +1,25 @@
+﻿@using System.Security.Claims
+
+<ul class="navbar-nav">
+    @if(User.Identity.IsAuthenticated)
+    {
+        <li class="nav-item d-flex justify-content-between align-items-center">
+            <a href="#" class="nav-link">@User.Identity.Name</a>
+        </li>
+        <li class="nav-item dropdown">
+            @await Component.InvokeAsync("User",new{userId = Convert.ToInt32(User.FindFirstValue(ClaimTypes.NameIdentifier))})
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#signInModal">Sign In</a>
+            <partial name="/Areas/Identity/Views/SignInOut/SignInPartial.cshtml" model="null">
+        </li>
+         <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#signOutModal">Register</a>
+            <partial name="/Areas/Identity/Views/SignInOut/RegisterPartial.cshtml" model="null">
+        </li>
+    }
+</ul>
+

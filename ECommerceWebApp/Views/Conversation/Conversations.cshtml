@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Chat";
+}
+
+<div class="card card-body border-0" style="height:80vh">
+    <div class="input-group">
+            <input id="searchInput" class="form-control" placeholder="Search"/>
+            <button id="searchBtn" class="btn btn-outline-primary px-3"> 
+                <i class="bi bi-search fs-5"></i> 
+            </button>
+    </div>
+    <div class=" w-100 h-100 my-2 overflow-auto">
+        <div class="list-group list-group-flush mt-4 d-none " id="searchContainer"></div>
+        <div class="list-group list-group-flush mt-4" id="convsContainer"></div>
+        <div class="list-group list-group-flush mt-4 d-none" id="groupsContainer"></div>
+        <div class="m-0 p-0 text-center small">
+            <a class="me-2 d-none" id="showMore">Show More</a>
+            <a class="d-none" id="createGroup" data-bs-toggle="modal" data-bs-target="#createGroupModal">Create Group</a>
+        </div>
+    </div>
+    <div class="text-center small px-3">
+         <a class="link me-3" id="showConvs">Chats</a>
+         <a class="link" id="showGroups">Groups</a>
+    </div>
+</div>
+
+
+<partial name="CreateGroupPartial" />
+
+@section Scripts
+{
+    <partial name="MomentPartial" />
+    <script src="~/js/Controllers/Conversation/Conversations.js"></script>
+    <script src="~/js/Controllers/Conversation/CreateGroup.js"></script>
+}

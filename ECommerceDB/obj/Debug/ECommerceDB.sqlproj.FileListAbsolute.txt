@@ -1,0 +1,6 @@
+D:\Asp.netCoreMVC\ECommerceWebApp\ECommerceDB\bin\Debug\ECommerceDB.dacpac
+D:\Asp.netCoreMVC\ECommerceWebApp\ECommerceDB\bin\Debug\ECommerceDB.dll
+D:\Asp.netCoreMVC\ECommerceWebApp\ECommerceDB\bin\Debug\ECommerceDB.pdb
+D:\Asp.netCoreMVC\ECommerceWebApp\ECommerceDB\obj\Debug\ECommerceDB.sqlproj.AssemblyReference.cache
+D:\Asp.netCoreMVC\ECommerceWebApp\ECommerceDB\obj\Debug\ECommerceDB.dll
+D:\Asp.netCoreMVC\ECommerceWebApp\ECommerceDB\obj\Debug\ECommerceDB.pdb

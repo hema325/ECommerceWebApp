@@ -1,0 +1,35 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[WishLists]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[WishLists].[Id] is being dropped, data loss could occur.
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[WishLists] (Foreign Key)
+       unnamed constraint on [dbo].[WishLists] (Foreign Key)
+       unnamed constraint on [dbo].[WishLists] (Unique Constraint)
+     Table rebuild
+       [dbo].[WishLists] (Table)
+     Create
+       Foreign Key: unnamed constraint on [dbo].[Categories] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[ItemOptions] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Messages] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Products] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Tokens] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserConversations] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserConversations] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserRoles] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserRoles] (Foreign Key)
+
+** Supporting actions
+     Create
+       Foreign Key: unnamed constraint on [dbo].[WishLists] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[WishLists] (Foreign Key)
+
+The column [dbo].[WishLists].[Id] is being dropped, data loss could occur.
+

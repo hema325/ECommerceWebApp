@@ -1,0 +1,11 @@
+﻿
+
+<script src = "https://MomentJS.com/downloads/moment.js"></script>
+
+<script>
+    $(".moment").each(function() {
+        $(this).text(moment($(this).text(),"DD-MM-YYYY hh:mm:ss").fromNow())
+    })
+</script>
+
+

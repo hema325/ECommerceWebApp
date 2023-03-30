@@ -1,0 +1,41 @@
+﻿@model ChangeDetailsViewModel
+
+@{
+    var returnUrl = Context.Request.Path + Context.Request.QueryString .ToString();
+}
+
+<div class="modal fade" id="changeDetailsModal">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg vh">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Change Details</h5>
+            </div>
+            <div class="modal-body">
+                <form asp-area="identity" asp-controller="account" asp-action="ChangeDetails" asp-route-returnUrl="@returnUrl">
+                    <div class="mb-3">
+                        <label asp-for="FirstName" class="form-label"></label>
+                        <input asp-for="FirstName" class="form-control" />
+                        <span asp-validation-for="FirstName"class="text-danger"></span>
+                    </div>
+                    <div class="my-3">
+                        <label asp-for="LastName" class="form-label"></label>
+                        <input asp-for="LastName" class="form-control" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    <div class="my-3">
+                        <label asp-for="PhoneNumber" class="form-label"></label>
+                        <input asp-for="PhoneNumber" class="form-control" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+                   <div class="mt-4 d-flex justify-content-end gap-2">
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#settingsModal">Back</button>
+                    <input type="submit" class="btn btn-primary" value="Change" />
+                   </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+   

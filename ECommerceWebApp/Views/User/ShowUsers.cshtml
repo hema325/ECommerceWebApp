@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "ShowUsers";
+}
+
+<div class="mt-5 mb-0 shadow-sm">
+    <div class="input-group">
+        <input type="text" name="filter" class="form-control form-control-lg" placeholder="search" id="searchInput"/>
+        <button type="button" class="btn btn-outline-primary"><i class="bi bi-search fs-5" id="searchBtn"></i></button>
+    </div>
+</div>
+
+<div class="d-flex my-3 row g-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 d-none" id="searchContainer"></div>
+<div class="d-flex my-3 row g-5 row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1" id="cardsContainer"></div>
+<div class="my-5 text-center"><a class="link d-none me-3" id="showMore">Show More</a> <a class="link d-none" id="cancel">Cancel</a> </div>
+
+
+@section Scripts
+{
+    <script src="/js/Controllers/User/ShowUsers.js"></script>
+}
+

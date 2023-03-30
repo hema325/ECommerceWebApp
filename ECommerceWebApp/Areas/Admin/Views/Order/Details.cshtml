@@ -1,0 +1,90 @@
+﻿@using ECommerceWebApp.Models.Order
+@model OrderDetailsViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<h2 class="text-secondary my-5">Details</h2>
+
+<div class="card card-body border-0 my-5 shadow w-100">
+    <div class="row">
+       <label asp-for="@Model.TimeStamp" class="col col-md-4 col-form-label"></label>
+       <input asp-for="@Model.TimeStamp" class="col form-control-plaintext" disabled/>
+   </div>
+   <div class="row">
+       <label asp-for="@Model.Status" class="col col-md-4 col-form-label"></label>
+       <input asp-for="@Model.Status" class="col form-control-plaintext" disabled/>
+   </div>
+   <div class="row">
+       <label asp-for="@Model.Total" class="col col-md-4 col-form-label"></label>
+       <input asp-for="@Model.Total" class="col form-control-plaintext" disabled/>
+   </div>
+   <div class="row">
+       <label asp-for="@Model.Country" class="col col-md-4 col-form-label"></label>
+       <input asp-for="@Model.Country" class="col form-control-plaintext" disabled/>
+   </div>
+   <div class="row">
+       <label asp-for="@Model.City" class="col col-md-4 col-form-label"></label>
+       <input asp-for="@Model.City" class="col form-control-plaintext" disabled/>
+   </div>
+   <div class="row">
+       <label asp-for="@Model.State" class="col col-md-4 col-form-label"></label>
+       <input asp-for="@Model.State" class="col form-control-plaintext" disabled/>
+   </div>
+   <div class="row">
+       <label asp-for="@Model.StreetAddress" class="col col-md-4 col-form-label"></label>
+       <input asp-for="@Model.StreetAddress" class="col form-control-plaintext" disabled/>
+   </div>
+   <div class="row">
+       <label asp-for="@Model.PostalCode" class="col col-md-4 col-form-label"></label>
+       <input asp-for="@Model.PostalCode" class="col form-control-plaintext" disabled/>
+   </div>
+</div>
+
+<h2 class="text-secondary my-5">Items</h2>
+
+@foreach(var item in Model.OrderItems)
+{
+    <div class="card border-0 overflow-hidden shadow my-5" style="height:200px" >
+        <div class="row align-items-center h-1">
+            <div class="col-lg-3 col-12">
+                <img src="/@item.ImgUrl" id="profileImg" class="d-block w-100" style="height:200px" />
+            </div>
+            <div class="col-lg col-12">
+                <div class="card-body">
+                    <div class="row">
+                        <label asp-for="@item.Name" class="col col-md-4 col-form-label"></label>
+                        <input asp-for="@item.Name" class="col form-control-plaintext" disabled/>
+                    </div>
+                    <div class="row">
+                        <label asp-for="@item.Price" class="col col-md-4 col-form-label"></label>
+                        <input asp-for="@item.Price" class="col form-control-plaintext" disabled/>
+                    </div>
+                    <div class="row">
+                        <label asp-for="@item.Quantity" class="col col-md-4 col-form-label"></label>
+                        <input asp-for="@item.Quantity" class="col form-control-plaintext" disabled/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="text-center"><a class="link" data-bs-toggle="collapse" data-bs-target="#status" id="updateStatusBtn">Update Status</a></div>
+
+
+<div class="collapse my-5" id="status">
+    <form asp-action="updateStatus" asp-route-id="@Model.Id" class="card card-body">
+        <select type="text" name="status" class="form-select my-2" placeholder="search" id="searchInput">
+            <option selected disabled value="-1">select status</option>
+            <option value ="1">Pending</option>
+            <option value ="2">Approved</option>
+            <option value ="3">Rejected</option>
+            <option value ="4">Shipped</option>
+            <option value ="5">Delivered</option>
+        </select>
+        <input type="submit" class="btn btn-primary float-end my-2" value="Update" />
+    </form>
+</div>
+

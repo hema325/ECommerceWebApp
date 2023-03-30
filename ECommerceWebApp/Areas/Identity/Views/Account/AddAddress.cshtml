@@ -1,0 +1,39 @@
+﻿@model AddAddressViewModel
+@{
+    ViewData["Title"] = "AddAddressViewModel";
+}
+
+<h2 class="my-5 text-secondary">Add Address</h2>
+
+<form  asp-action="AddAddress">
+    <div class="mb-3">
+        <label asp-for="CountryId" class="form-label"></label>
+        <select asp-for="CountryId" asp-items="@Model.Countries" class="form-select">
+            <option disabled selected>--Select--</option>
+        </select>
+        <span asp-validation-for="CountryId"class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="City" class="form-label"></label>
+        <input asp-for="City" class="form-control" />
+        <span asp-validation-for="City"class="text-danger"></span>
+    </div>
+    <div class="my-3">
+        <label asp-for="State" class="form-label"></label>
+        <input asp-for="State" class="form-control" />
+        <span asp-validation-for="State" class="text-danger"></span>
+    </div>
+    <div class="my-3">
+        <label asp-for="StreetAddress" class="form-label"></label>
+        <input asp-for="StreetAddress" class="form-control" />
+        <span asp-validation-for="StreetAddress" class="text-danger"></span>
+    </div>
+    <div class="my-3">
+        <label asp-for="PostalCode" class="form-label"></label>
+        <input asp-for="PostalCode" class="form-control" />
+        <span asp-validation-for="PostalCode" class="text-danger"></span>
+    </div>
+    <div class="mt-4 d-flex justify-content-end gap-2">
+        <input type="submit" class="btn btn-primary" value="Add" />
+    </div>
+</form>

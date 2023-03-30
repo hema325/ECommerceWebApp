@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="card card-body">
+        <div class="d-flex justify-content-between align-items-center">
+        <div class="card-title mt-4">
+            <h2>Orders</h2>
+        </div>
+        <div class="input-group w-50 d-flex align-items-center">
+            <select type="text" class="form-select h-25 " placeholder="search" id="searchInput">
+                <option selected disabled value="-1">select status</option>
+                <option value ="0">UnPaid</option>
+                <option value ="1">Pending</option>
+                <option value ="2">Approved</option>
+                <option value ="3">Rejected</option>
+                <option value ="4">Shipped</option>
+                <option value ="5">Delivered</option>
+                <option value ="6">Canceled</option>
+            </select>
+            <button class="btn btn-primary p-2" id="searchBtn"><i class="bi bi-search fs-5"></i></button>
+        </div>
+    </div>
+
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>Order Date Time</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tbodyData"></tbody>
+        <tbody id="tbodySearch"></tbody>
+    </table>
+
+    <div class="mt-3 d-flex justify-content-end">
+        <button class="btn btn-outline-secondary rounded d-none me-2 mb-4" id="cancelSearch">Cancel</button>
+        <button class="btn btn-outline-primary rounded mb-4" id="showMore">Show More</button>
+    </div>
+
+</div>
+
+
+@section Scripts
+{
+    <script src="/js/Areas/Admin/Order/Index.js"></script>
+}
+

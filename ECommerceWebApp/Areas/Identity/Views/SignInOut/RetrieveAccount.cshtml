@@ -1,0 +1,27 @@
+﻿@model RetrieveAccountViewModel
+@{
+    ViewData["Title"] = "RetrieveAccount";
+}
+
+<h1>Retrieve Account</h1>
+
+<form asp-action="RetrieveAccount" class="row col-lg-6">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input asp-for="Id" hidden readonly />
+    <input asp-for="TokenValue" hidden readonly />
+    <input asp-for="Purpose" hidden readonly />
+     <div class="my-3">
+        <label asp-for="NewPassword" class="form-label"></label>
+        <input asp-for="NewPassword" class="form-control"/>
+        <span asp-validation-for="NewPassword" class="text-danger"></span>
+    </div>
+     <div class="my-3">
+        <label asp-for="ConfirmNewPassword" class="form-label"></label>
+        <input asp-for="ConfirmNewPassword" class="form-control"/>
+        <span asp-validation-for="ConfirmNewPassword" class="text-danger"></span>
+    </div>
+    <div class="my-3">
+         <input type="submit" class="btn btn-primary" value="Continue"/>
+    </div>
+</form>
+

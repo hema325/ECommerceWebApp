@@ -1,0 +1,28 @@
+﻿@model CategoryDetailsViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<div class="card card-body">
+    <div class="card-title mt-4">
+        <h2>Category Details</h2>
+    </div>
+
+    <div class="row">
+        <label asp-for="Name" class="col-form-label col-4"></label>
+        <input asp-for="Name" class="form-control-plaintext col" disabled readonly>
+    </div>
+
+    <div class="row">
+        <label asp-for="ParentName" class="col-form-label col-4"></label>
+        <input asp-for="ParentName" class="form-control-plaintext col" disabled readonly />
+    </div>
+        
+    <div class="mt-3 mb-4 d-flex justify-content-end">
+        <a asp-action="Delete" asp-route-Id="@Model.Id" class="btn btn-outline-danger me-2">Delete</a>
+        <a asp-action="Edit" asp-route-Id="@Model.Id" class="btn btn-outline-primary me-2">Edit</a>
+    </div>
+</div>
+

@@ -1,0 +1,74 @@
+﻿@model GroupViewModel
+@{
+    ViewData["Title"] = "Group";
+}
+
+<input id="convId" value="@Model.ConvId" hidden readonly />
+<input id="senderId" value="@Model.SenderId" hidden readonly/>
+
+<div class="card card-body border-0" style="height:80vh">
+
+        <div class="overflow-auto " style="min-height:88%" id="chatBox">
+            <div class="text-center d-none" id="showMoreContainer"><a class="link" id = "showMore" >show more</a ></div>
+             
+             <div class="text-center d-none" id = "leftGroup"><a class="text-muted small" >left group <span class="moment" id="leftDateTime">@Model.LeftDateTime</span></a></div>
+             </div>
+
+        <div class="text-muted d-flex justify-content-start  align-items-center pe-3 pt-3 mt-2 @(Model.LeftDateTime != null?"d-none":"")" id="sendMsgContainer">
+            <img src="/@Model.SenderImgUrl" data-bs-toggle="dropdown" data-bs-offset="0,10" id="senderImgUrl"
+              alt="avatar 3" style="width: 46px; height: 46px;" class="me-3 rounded-circle">
+            <ul class="dropdown-menu offset-10 w-50" id="controlDropDown">
+                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#AddUserModal" id="addUser">Add User</a></li>
+                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showMembersModal" id="showMembers">Show Members</a></li>
+                <li><a class="dropdown-item" id="leaveGroup">Leave Group</a></li>
+            </ul>
+
+            <div class="input-group me-2">
+                <input type="text" class="form-control form-control-lg" id="message"
+                placeholder="Type message">
+                <button class="btn btn-outline-primary" id="sendGroup"><i class="bi bi-send fs-5 px-1"></i></button>
+            </div>
+        </div>
+       
+</div>
+
+
+<div class="modal fade" id="showMembersModal">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="list-group list-group-flush" id="showMembersContainer@(Model.ConvId)">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="AddUserModal">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="list-group list-group-flush" id="showUsersContainer@(Model.ConvId)">
+                    <form action="AddUserToGroup?convId=@Model.ConvId" method="post">
+                            <label class="form-label">Choose User</label>
+                            <select name="chosenUserId" class="form-control text-capitalize" id="UserID">
+                                <option class="text-muted" disabled selected>select</option>
+                            </select>
+                        <div class="mt-3 d-flex justify-content-end">
+                            <input type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal" value="Cancel"/>
+                            <input type="submit" class="btn btn-primary" value="Add"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <partial name="MomentPartial" />
+    <script src="/js/Controllers//Conversation/Group.js"></script>
+}
+

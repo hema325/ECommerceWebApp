@@ -1,0 +1,35 @@
+﻿@model ConversationViewModel
+@{
+    ViewData["Title"] = "Conversation";
+}
+
+<input id="convId" value="@Model.ConvId" hidden readonly />
+<input id="senderId" value="@Model.SenderId" hidden readonly/>
+<input id="receiverId" value="@Model.ReceiverId" hidden readonly/>
+
+<div class="card card-body border-0 overflow-auto" style="height:80vh">
+    <div class="w-100 h-100">
+        
+        <div class="overflow-auto" style="height:87%" id="chatBox">
+            <div class="text-center d-none" id="showMoreContainer"><a class="link" id = "showMore" >show more</a ></div>
+            <div class="text-muted text-center small invisible lastSeen @(Model.ReceiverIsOnline?"d-none":"d-block")" id="lastSeenContainer@(Model.ReceiverId)">last seen <span class="moment" id="lastSeenTimeStamp@(Model.ReceiverId)">@Model.ReceiverLastSeen</span></div>
+       </div>
+
+        <div class="text-muted d-flex justify-content-start align-items-center pe-3 pt-3 mt-2">
+            <img src="/@Model.SenderImgUrl" id="senderImgUrl"
+              alt="avatar 3" style="width: 46px; height: 46px;"  class="me-3 rounded-circle">
+           <div class="input-group">
+                <input type="text" class="form-control form-control-lg" id="message"
+              placeholder="Type message">
+              <button class="btn btn-outline-primary" id="sendPrivate"><i class="bi bi-send fs-5 px-1"></i></button>
+           </div>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts
+{
+    <partial name="MomentPartial" />
+    <script src="/js/Controllers/Conversation/Conversation.js"></script>
+}

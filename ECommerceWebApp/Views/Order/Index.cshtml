@@ -1,0 +1,47 @@
+﻿@model IEnumerable<OrderIndexViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="my-5 text-secondary">Orders</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="py-3 text-muted">Order Date Time</th>
+            <th class="py-3 text-muted">Status</th>
+            <th class="py-3 text-muted">Total</th>
+            <th class="py-3 text-muted">Action</th>
+        </tr>
+    </thead>
+
+    <tbody id="dataContainer">
+        @foreach (var item in Model)
+        {
+            <tr id="con@(item.Id)">
+                <td class="py-3">@item.TimeStamp</td>
+                <td class="py-3" id="sts@(item.Id)">@item.Status</td>
+                <td class="py-3">$@item.Total</td>
+                <td class="py-3">
+                    <a href="/Order/details/@item.Id"><i class="bi bi-eye fs-5 me-2"></i></a>
+                    <a id="del@(item.Id)" class="@(item.Status == DataAccess.Data.Order.Statuses.Canceled?"":"d-none") deleteBtn"><i class="bi bi-trash fs-5 text-danger me-2"></i></a>
+                    @if(item.Status == DataAccess.Data.Order.Statuses.UnPaid)
+                    {
+                        <a asp-action="Pay" asp-route-orderId="@item.Id" class="text-secondary text-decoration-none"><i class="bi bi-currency-dollar fs-5"></i></a>
+                    }
+                    else if(item.Status == DataAccess.Data.Order.Statuses.Pending || item.Status == DataAccess.Data.Order.Statuses.Approved)
+                    {
+                        <a Id="cle@(item.Id)" class="text-danger text-decoration-none cancelBtn"><i class="bi bi-x-lg fs-5"></i></a>   
+                    }
+                </td>
+            </tr>
+        }
+         
+    </tbody>
+</table>
+
+@section Scripts
+{
+    <script src="/js/Controllers/Order/Index.js"></script>
+}
+

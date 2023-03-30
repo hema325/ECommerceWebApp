@@ -1,0 +1,30 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Items]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[ItemOptions] (Foreign Key)
+       unnamed constraint on [dbo].[Items] (Foreign Key)
+     Table rebuild
+       [dbo].[Items] (Table)
+     Create
+       Foreign Key: unnamed constraint on [dbo].[Categories] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[ItemOptions] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Messages] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Tokens] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserConversations] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserConversations] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserRoles] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserRoles] (Foreign Key)
+
+** Supporting actions
+     Create
+       Foreign Key: unnamed constraint on [dbo].[ItemOptions] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Items] (Foreign Key)

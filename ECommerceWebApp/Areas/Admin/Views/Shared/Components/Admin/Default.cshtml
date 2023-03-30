@@ -1,0 +1,17 @@
+﻿@using ECommerceWebApp.Areas.Admin.Models.ViewComponent
+@model AdminViewComponentModel
+
+<li class="nav-item dropdown d-none d-lg-block user-dropdown">
+    <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+    <img class="img-xs rounded-circle" src="/@Model.ImgUrl" alt="Profile image"> </a>
+    <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+        <div class="dropdown-header text-center">
+          <img class="img-md rounded-circle" src="/@Model.ImgUrl" alt="Profile image" width="70" height="65">
+          <p class="mb-0 mt-3 font-weight-semibold">@Model.Name</p>
+          <p class="fw-light text-muted mb-0">@Model.Email</p>
+        </div>
+        <a asp-area="identity" asp-controller="Account" asp-action="Index" class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile</a>
+        <a asp-area="" asp-controller="Conversation" asp-action="Conversations" class="dropdown-item"><i class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i> Messages</a>
+        <a asp-area="identity" asp-controller="SignInOut" asp-action="SignOut" class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+    </div>
+</li>

@@ -1,0 +1,31 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column Status in table [dbo].[Orders] is currently  VARCHAR (24) NULL but is being changed to  INT NOT
+         NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  INT NOT
+         NULL.
+
+** User actions
+     Alter
+       [dbo].[Orders] (Table)
+     Create
+       Foreign Key: unnamed constraint on [dbo].[Categories] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[ItemOptions] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Messages] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Products] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Tokens] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserConversations] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserConversations] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserRoles] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserRoles] (Foreign Key)
+
+** Supporting actions
+
+The column Status on table [dbo].[Orders] must be changed from NULL to NOT NULL. If the table contains data, the ALTER script may not work. To avoid this issue, you must add values to this column for all rows or mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+The type for column Status in table [dbo].[Orders] is currently  VARCHAR (24) NULL but is being changed to  INT NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  INT NOT NULL.
+

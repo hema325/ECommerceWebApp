@@ -1,0 +1,28 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column Price in table [dbo].[Items] is currently  INT NOT NULL but is being changed to  DECIMAL (10, 2) NOT
+         NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  DECIMAL
+         (10, 2) NOT NULL.
+
+** User actions
+     Alter
+       [dbo].[Items] (Table)
+     Create
+       Foreign Key: unnamed constraint on [dbo].[Categories] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Messages] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Tokens] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserConversations] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserConversations] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserRoles] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[UserRoles] (Foreign Key)
+
+** Supporting actions
+
+The type for column Price in table [dbo].[Items] is currently  INT NOT NULL but is being changed to  DECIMAL (10, 2) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  DECIMAL (10, 2) NOT NULL.
+
