@@ -12,6 +12,12 @@ namespace DataAccess.DataAccessRepository.Repository
     {
         public TokenRepository(string connectionString) : base(connectionString) { }
 
+        public async Task CleanUpAsync()
+        {
+            var sql = $"Delete from Tokens where validTill < @validTill";
+            await ExecuteAsync(sql, new {validTill = DateTime.UtcNow});
+        }
+
         public async Task<bool> DeleteByUserIdAndPurposeAsync(int userId,Token.Purposes purpose)
         {
             var sql = $"Delete from Tokens where UserId=@userId and Purpose=@purpose";

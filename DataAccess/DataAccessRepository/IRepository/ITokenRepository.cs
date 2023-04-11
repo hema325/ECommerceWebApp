@@ -12,5 +12,6 @@ namespace DataAccess.DataAccessRepository.IRepository
         Task<Token> FindByValueAsync(string value, IEnumerable<string> attrs = null);
         Task<bool> DeleteByValueAsync(string value);
         Task<bool> DeleteByUserIdAndPurposeAsync(int userId,Token.Purposes purpose);
+        Task CleanUpAsync();
     }
 }

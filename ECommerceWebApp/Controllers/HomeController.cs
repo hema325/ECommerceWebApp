@@ -1,16 +1,11 @@
-﻿using Dapper;
-using DataAccess.Data;
-using DataAccess.DataAccessRepository.IRepository;
-using DataAccess.DataAccessRepository.Repository;
+﻿using DataAccess.DataAccessRepository.IRepository;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
 using ECommerceWebApp.Models;
 using System.Diagnostics;
 using AutoMapper;
-using System.Security.Claims;
-using ECommerceWebApp.Constrains;
-using Microsoft.AspNetCore.DataProtection;
-
+using Microsoft.Extensions.Caching.Memory;
+using System.Text.Json;
+using Microsoft.Extensions.Caching.Distributed;
 namespace ECommerceWebApp.Controllers
 {
     public class HomeController : Controller

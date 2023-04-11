@@ -1,6 +1,7 @@
 using DataAccess.Data;
 using DataAccess.DataAccessRepository.IRepository;
 using DataAccess.DataAccessRepository.Repository;
+using ECommerceWebApp.Services.BackGroundServices;
 using ECommerceWebApp.Constrains;
 using ECommerceWebApp.Hubs;
 using ECommerceWebApp.Options;
@@ -19,7 +20,6 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>(provider => new UnitOfWork(b
 builder.Services.AddSingleton<IEmailSender, EmailSender>();
 builder.Services.AddSingleton<IPasswordHasher<User>, PasswordHasher<User>>();
 builder.Services.AddScoped<IDBInitializer, DBInitializer>();
-
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultScheme = Schemes.Default;
@@ -36,13 +36,12 @@ builder.Services.AddAuthentication(options =>
     options.AppSecret = builder.Configuration.GetSection("Authentication:Facebook")["AppSecret"];
     options.SaveTokens = true;
 });
-
-
 builder.Services.AddSignalR();
 builder.Services.AddSession(options =>
 {
     options.Cookie.IsEssential = true;
 });
+builder.Services.AddHostedService<TokensCleanUpHostedService>();
 
 var app = builder.Build();
 
