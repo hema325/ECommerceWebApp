@@ -1,5 +1,10 @@
 # ECommerceWebApp
 
+A web app for selling products contains a chat system and sections such as the shopping cart, orders, reviews, notifications, and conversations, in addition to the ability to apply product filtering integrated with stripe payment.
+
+This app is implemented using asp .net core(mvc), dapper orm, sql server, repository pattern, unit of work, auto mapper, signalr, html, bootstrap, jquery and N-Tier architecture
+
+##Images
 ![Web capture_30-8-2023_215722_localhost](https://github.com/hema325/ECommerceWebApp/assets/74411228/5042ed21-977e-4c1f-8e57-f060695067b3)
 ![Web capture_30-8-2023_215630_localhost](https://github.com/hema325/ECommerceWebApp/assets/74411228/f293a3d6-a3df-48ee-b943-240ff7b29cdd)
 ![Web capture_30-8-2023_215613_localhost](https://github.com/hema325/ECommerceWebApp/assets/74411228/9f979c26-6c46-454f-8009-c52dc366369e)
